@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Examples</title>
+	<meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no" name="viewport"/>
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<link href="gallery.css" rel="stylesheet">
+</head>
+<style>
+	*{margin:0px; padding: 0px;}
+	.galleryImg{
+		width: 150px;height: auto;border:1px solid #ccc;margin:0 40px 40px 40px; cursor: pointer; position: relative;
+	}
+	.galleryImg img{width: 100%;vertical-align: middle;}
+	.galleryImg span{ position: absolute; left: 0px; bottom:0px;background: rgba(0,0,0,.6); color: #fff;padding:5px 10px;}
+
+	h1{font-size: 24px; margin-left: 40px; margin-bottom: 10px;margin-top: 20px;}
+	.galleryImg2{ height: 214px;margin-left: 40px;}
+	.galleryImg2 div{ width: 150px; float: left;margin-right: 8px; position: relative; cursor: pointer;margin-bottom: 8px;}
+	.galleryImg2 div p{width: 132px; text-align: center;background: rgba(0,0,0,.5);font-size: 12px; color: #fff;position: absolute;left: 0px; bottom: 0px;padding: 4px 0;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;padding: 4px 9px;}
+	.galleryImg2 div img{ width: 150px;vertical-align: middle;}
+</style>
+<body>	
+<h1>相册形式</h1>
+    <div class="galleryImg"><img src="s4.jpg" alt=""> <span>相册1</span></div>
+    <h1>列表形式</h1>
+	<div class="galleryImg2">
+		<div class="gals"><img src="s4.jpg" data-src ="s4.jpg" alt="" class="gallery-src"> <p class="gallery-title">暴雪或使用风暴英雄重制《魔兽争霸3》</p></div>
+		<div class="gals"><img src="s2.jpg" data-src ="s2.jpg" alt="" class="gallery-src"> <p class="gallery-title">国际空间站明年将对中国解禁</p></div>
+		<div class="gals"><img src="s4.jpg" data-src ="s4.jpg" alt="" class="gallery-src"> <p class="gallery-title">暴雪或使用风暴英雄重制《魔兽争霸3》</p></div>
+		<div class="gals"><img src="s2.jpg" data-src ="s2.jpg" alt="" class="gallery-src"> <p class="gallery-title">国际空间站明年将对中国解禁</p></div>
+	</div>
+
+	
+
+</body>
+<script src="gallery.js"></script>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		//相册数据
+		var arr = [
+			{src:'s4.jpg',title:'暴雪或使用风暴英雄重制《魔兽争霸3》'},
+			{src:'s2.jpg',title:'国际空间站明年将对中国解禁'},
+			{src:'s3.jpg',title:'[组图]盘点火星上的“怪异物体”'},
+			{src:'s2.jpg',title:'暴雪或使用风暴英雄重制《魔兽争霸3》'},
+			{src:'s3.jpg',title:'国际空间站明年将对中国解禁'},
+			{src:'s2.jpg',title:'[组图]盘点火星上的“怪异物体'}
+		];
+		
+
+		gallery('.galleryImg').init(arr);
+
+
+		gallery('.gals',true).init({
+			title : '相册1',
+			mouse:true
+		});
+	}
+
+</script>
+</html>
